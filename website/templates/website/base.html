@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'website/images/favicon.png' %}"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <link href="{% static 'website/css/style.css' %}" rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+  {% block meta %}{% endblock %}
+</head>
+<body>
+  <div class="fullscreen-bg">
+      <video loop muted autoplay poster="{% static 'website/images/videoframe.jpg' %}" class="fullscreen-bg__video">
+          <source src="{% static 'website/images/video.webm' %}" type="video/webm">
+      </video>
+  </div>
+  <br>
+  {% block search %}{% endblock %}
+  <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+  {% block result %}{% endblock %}
+
+
+{% block graph %}{% endblock %}
+
+</body>
+</html>
